@@ -26,30 +26,63 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+# Custom CSS for better styling - works in both local and cloud
 st.markdown("""
     <style>
+    /* Main container */
     .main {
         padding: 0rem 1rem;
     }
-    .stMetric {
-        background-color: #f0f2f6;
-        padding: 15px;
-        border-radius: 10px;
+    
+    /* Metric styling - compatible with Streamlit Cloud */
+    div[data-testid="stMetricValue"] {
+        font-size: 2rem;
+        font-weight: bold;
     }
+    
+    div[data-testid="stMetricLabel"] {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    div[data-testid="stMetricDelta"] {
+        font-size: 0.875rem;
+    }
+    
+    /* Headers */
     h1 {
         color: #1f77b4;
         padding-bottom: 20px;
     }
+    
     h2 {
         color: #ff7f0e;
         padding-top: 20px;
     }
+    
+    h3 {
+        color: #2ca02c;
+    }
+    
+    /* Ensure proper spacing */
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    /* Chart containers */
     .plot-container {
-        border: 1px solid #e0e0e0;
-        border-radius: 10px;
-        padding: 10px;
         margin: 10px 0;
+    }
+    
+    /* Sidebar styling */
+    .css-1d391kg {
+        padding-top: 3rem;
+    }
+    
+    /* Info boxes */
+    .stAlert {
+        border-radius: 10px;
     }
     </style>
 """, unsafe_allow_html=True)
